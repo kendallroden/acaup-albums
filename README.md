@@ -33,6 +33,12 @@ az provider register --namespace Microsoft.App
 ```
 az provider register --namespace Microsoft.OperationalInsights
 ```
+### Set necessary env variables. Make sure to target a location supported for container apps
+```
+RG='your-rg-name'
+LOCATION='your-preferred-location'
+GITHUB_USERNAME='your-gh-username'
+```
 
 ## Clone the API code 
 
@@ -57,12 +63,6 @@ cd code-to-cloud
 Let's experiment with one of the new capabilities of the `az containerapp up` command. Recently, support was added for deploying from repos without a dockerfile present. Let's test it out and see how it works! Delete the file called `dockerfile` from the repository.
 
 ## Deploy the Album API to Azure Container Apps 
-
-### Set necessary env variables. Make sure to target a location supported for container apps
-```
-RG='your-rg-name'
-LOCATION='your-preferred-location'
-```
 
 ### Deploy an Azure Container App for the Album API
 
