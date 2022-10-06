@@ -36,12 +36,12 @@ az provider register --namespace Microsoft.OperationalInsights
 
 ## Clone the API code 
 
-For this sample, we will be deploying a simple front end with a backend API to Azure Container Apps using the `az containerapp up` command. Navigate to the following [repo](https://github.com/azure-samples/containerapps-albums.go) and fork. 
+For this sample, we will be deploying a simple front end with a backend API to Azure Container Apps using the `az containerapp up` command. Navigate to the following [repo](https://github.com/azure-samples/containerapps-albums-csharp) and fork. 
 
 Retrieve the necessary command to clone to your local machine. The command should look something like the following: 
 
 ```
-git clone https://github.com/$GITHUB_USERNAME/containerapps-albumapi-go.git code-to-cloud
+git clone https://github.com/$GITHUB_USERNAME/containerapps-albumapi-csharp.git code-to-cloud
 ```
 
 Replace the variables with your GitHub username and the app language you would like to use. This command will clone the code into a directory called `code-to-cloud`.
