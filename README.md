@@ -71,9 +71,16 @@ az containerapp up --name album-api --source ./src -g $RG -l $LOCATION
 ```
 
 - Creates a resource group.
-- Creates an Azure Container Registry.
+- Creates an Azure Container Registry and an ACR task.
 - Creates an Azure Log Analytics workspace.
 - Creates an Azure Container Apps environment.
 - Builds a container image and pushes it to the container registry.
 - Creates an Azure Container App.
 - Deploys the container to the container app.
+
+
+### Enable ingress
+
+```
+ az containerapp ingress enable -n album-api -g $RG --type external --target-port 8080 --transport auto
+```
