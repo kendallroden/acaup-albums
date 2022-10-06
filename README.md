@@ -34,4 +34,31 @@ az provider register --namespace Microsoft.App
 az provider register --namespace Microsoft.OperationalInsights
 ```
 
-## 
+## Clone the API code 
+
+For this sample, we will be deploying a simple front end with a backend API to Azure Container Apps using the `az containerapp up` command. Navigate to the following [repo](https://github.com/azure-samples/containerapps-albums) and select the language of your choice for the backend API. 
+
+Upon navigating to the repo of your choice, fork the repo and retrieve the necessary command to clone to your local machine. The command should look something like the following: 
+
+```
+git clone https://github.com/$GITHUB_USERNAME/containerapps-albumapi-$LANGUAGE.git code-to-cloud
+```
+
+Replace the variables with your GitHub username and the app language you would like to use. This command will clone the code into a directory called `code-to-cloud`.
+
+Change your directory to ensure you are pointed at the newly cloned repo 
+
+```
+cd code-to-cloud/src
+```
+
+## DELETE the dockerfile :) 
+
+Let's experiment with one of the new capabilities of the `az containerapp up` command. Recently, support was added for deploying from repos without a dockerfile present. Let's test it out and see how it works! Delete the file called `dockerfile` from the repository.
+
+## Deploy the Album API to Azure Container Apps 
+
+
+
+
+
