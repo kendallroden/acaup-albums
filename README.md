@@ -67,7 +67,7 @@ Let's experiment with one of the new capabilities of the `az containerapp up` co
 ### Deploy an Azure Container App for the Album API
 
 ```
-az containerapp up --name album-api --source ./src -g $RG -l $LOCATION
+az containerapp up --name album-api --source ./src -g $RG -l $LOCATION --ingress external
 ```
 
 - Creates a resource group.
@@ -77,10 +77,4 @@ az containerapp up --name album-api --source ./src -g $RG -l $LOCATION
 - Builds a container image and pushes it to the container registry.
 - Creates an Azure Container App.
 - Deploys the container to the container app.
-
-
-### Enable ingress
-
-```
- az containerapp ingress enable -n album-api -g $RG --type external --target-port 8080 --transport auto
-```
+- Enables an ingress.
