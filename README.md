@@ -36,12 +36,12 @@ az provider register --namespace Microsoft.OperationalInsights
 
 ## Clone the API code 
 
-For this sample, we will be deploying a simple front end with a backend API to Azure Container Apps using the `az containerapp up` command. Navigate to the following [repo](https://github.com/azure-samples/containerapps-albums) and select the language of your choice for the backend API. 
+For this sample, we will be deploying a simple front end with a backend API to Azure Container Apps using the `az containerapp up` command. Navigate to the following [repo](https://github.com/azure-samples/containerapps-albums.go) and fork. 
 
-Upon navigating to the repo of your choice, fork the repo and retrieve the necessary command to clone to your local machine. The command should look something like the following: 
+Retrieve the necessary command to clone to your local machine. The command should look something like the following: 
 
 ```
-git clone https://github.com/$GITHUB_USERNAME/containerapps-albumapi-$LANGUAGE.git code-to-cloud
+git clone https://github.com/$GITHUB_USERNAME/containerapps-albumapi-go.git code-to-cloud
 ```
 
 Replace the variables with your GitHub username and the app language you would like to use. This command will clone the code into a directory called `code-to-cloud`.
@@ -49,7 +49,7 @@ Replace the variables with your GitHub username and the app language you would l
 Change your directory to ensure you are pointed at the newly cloned repo 
 
 ```
-cd code-to-cloud/src
+cd code-to-cloud
 ```
 
 ## DELETE the dockerfile :) 
@@ -58,7 +58,22 @@ Let's experiment with one of the new capabilities of the `az containerapp up` co
 
 ## Deploy the Album API to Azure Container Apps 
 
+### Set necessary env variables. Make sure to target a location supported for container apps
+```
+RG='your-rg-name'
+LOCATION='your-preferred-location'
+```
 
+### Deploy an Azure Container App for the Album API
 
+```
+az containerapp up --name album-api --source ./src -g $RG -l $LOCATION
+```
 
-
+- Creates a resource group.
+- Creates an Azure Container Registry.
+- Creates an Azure Log Analytics workspace.
+- Creates an Azure Container Apps environment.
+- Builds a container image and pushes it to the container registry.
+- Creates an Azure Container App.
+- Deploys the container to the container app.
